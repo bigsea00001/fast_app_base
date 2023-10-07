@@ -1,5 +1,6 @@
 import 'package:fast_app_base/common/util/local_json.dart';
 import 'package:fast_app_base/screen/main/tab/stock/vo_simple_stock.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SearchStockData extends GetxController {
@@ -19,5 +20,11 @@ class SearchStockData extends GetxController {
     final jsonList =
         await LocalJson.getObjectList<SimpleStock>('stock_list.json');
     stocks.addAll(jsonList);
+  }
+
+  void search(String keyword) {
+    autoCompleteList.value =
+        stocks.where((element) => element.stockName.contains(keyword)).toList();
+    // debugPrint(autoCompleteList.toString());
   }
 }

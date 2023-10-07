@@ -1,9 +1,12 @@
+import 'package:fast_app_base/common/common.dart';
 import 'package:fast_app_base/screen/main/tab/stock/search/search_stock_data.dart';
 import 'package:fast_app_base/screen/main/tab/stock/search/w_popular_search_stock_list.dart';
 import 'package:fast_app_base/screen/main/tab/stock/search/w_search_history_stock_list.dart';
 import 'package:fast_app_base/screen/main/tab/stock/search/w_stock_search_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import 'w_search_auto_complete_list.dart';
 
 class SearchStockScreen extends StatefulWidget {
   const SearchStockScreen({super.key});
@@ -14,13 +17,16 @@ class SearchStockScreen extends StatefulWidget {
 
 class _SearchStockScreenState extends State<SearchStockScreen> {
   final TextEditingController controller = TextEditingController();
+  late final searchData = Get.find<SearchStockData>();
 
   @override
   void initState() {
-    controller.addListener(() {
-      debugPrint(controller.text);
-    });
     Get.put(SearchStockData());
+    controller.addListener(() {
+      searchData.search(controller.text);
+      // debugPrint(controller.text);
+    });
+
     super.initState();
   }
 
@@ -37,12 +43,16 @@ class _SearchStockScreenState extends State<SearchStockScreen> {
       appBar: StockSearchAppBar(
         controller: controller,
       ),
-      body: ListView(
-        children: const [
-          SearchHistoryStockList(),
-          PopularSearchStockList(),
-        ],
-      ),
+      body: searchData.autoCompleteList.isEmpty
+          // ? 'aaa'.text.make()
+          // : 'bbb'.text.make(),
+          ? ListView(
+              children: const [
+                SearchHistoryStockList(),
+                PopularSearchStockList(),
+              ],
+            )
+          : SearchAutoCompleteList(),
     );
   }
 }
