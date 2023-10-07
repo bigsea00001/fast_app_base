@@ -30,7 +30,7 @@ class StockItem extends StatelessWidget {
                   .make(),
               "${stock.currentPrice.toComma()}원"
                   .text
-                  .color(context.appColors.lessImportant)
+                  .color(context.appColors.commonText)
                   .make(),
             ],
           ),

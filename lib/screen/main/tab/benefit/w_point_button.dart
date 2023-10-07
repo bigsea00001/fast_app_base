@@ -11,12 +11,12 @@ class PointButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        "내포인트".text.color(context.appColors.lessImportant).make(),
+        "내포인트".text.color(context.appColors.commonText).make(),
         emptyExpanded,
         "$point 원".text.bold.make(),
         width10,
         Arrow(
-          color: context.appColors.lessImportant,
+          color: context.appColors.commonText,
         ),
       ],
     );

@@ -23,7 +23,7 @@ abstract mixin class StockPercentageDataProvider {
           : "-";
 
   Color getPriceColor(BuildContext context) => isSame
-      ? context.appColors.lessImportant
+      ? context.appColors.commonText
       : isPlus
           ? context.appColors.plus
           : context.appColors.minus;

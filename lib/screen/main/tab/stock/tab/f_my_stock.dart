@@ -64,7 +64,7 @@ class MyStockFragment extends StatelessWidget {
                   children: [
                     '관심 주식'.text.bold.make(),
                     // emptyExpanded,
-                    '편집하기'.text.color(context.appColors.lessImportant).make(),
+                    '편집하기'.text.color(context.appColors.commonText).make(),
                   ],
                 ),
                 height20,
