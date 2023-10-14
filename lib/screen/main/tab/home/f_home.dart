@@ -54,7 +54,9 @@ class HomeFragment extends StatelessWidget {
                   ),
                 ],
               ).pSymmetric(h: 20),
-            ),
+            ).animate().slideY(
+                  duration: 1000.ms,
+                ),
           ),
           const TtossAppBar(),
         ],

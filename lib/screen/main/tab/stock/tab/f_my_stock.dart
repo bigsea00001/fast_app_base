@@ -26,10 +26,15 @@ class MyStockFragment extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             height20,
-            '계좌'.text.make(),
+            '계좌'.text.color(context.appColors.commonText).make(),
             Row(
               children: [
-                '443원'.text.size(24).bold.make(),
+                '443원'
+                    .text
+                    .color(context.appColors.commonText)
+                    .size(24)
+                    .bold
+                    .make(),
                 const Arrow(),
                 emptyExpanded,
                 RoundedContainer(
@@ -37,7 +42,11 @@ class MyStockFragment extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                   radius: 8,
-                  child: '채우기'.text.size(12).make(),
+                  child: '채우기'
+                      .text
+                      .color(context.appColors.commonText)
+                      .size(12)
+                      .make(),
                 ),
               ],
             ),
@@ -62,7 +71,11 @@ class MyStockFragment extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    '관심 주식'.text.bold.make(),
+                    '관심 주식'
+                        .text
+                        .color(context.appColors.commonText)
+                        .bold
+                        .make(),
                     // emptyExpanded,
                     '편집하기'.text.color(context.appColors.commonText).make(),
                   ],

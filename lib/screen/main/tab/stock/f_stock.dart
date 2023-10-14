@@ -1,8 +1,10 @@
 import 'package:fast_app_base/common/common.dart';
 import 'package:fast_app_base/common/widget/w_image_button.dart';
+import 'package:fast_app_base/screen/main/s_main.dart';
 import 'package:fast_app_base/screen/main/tab/stock/search/s_search_stock.dart';
 import 'package:flutter/material.dart';
 
+import 'setting/s_setting.dart';
 import 'tab/f_my_stock.dart';
 import 'tab/f_todays_discovery.dart';
 
@@ -22,6 +24,8 @@ class _StockFragmentState extends State<StockFragment>
   Widget build(BuildContext context) {
     return Container(
       color: context.appColors.appBarbackground,
+      padding:
+          const EdgeInsets.only(bottom: MainScreenState.bottomNavigatiorHeight),
       child: CustomScrollView(
         slivers: [
           SliverAppBar(
@@ -42,7 +46,8 @@ class _StockFragmentState extends State<StockFragment>
               ),
               ImageButton(
                 onTap: () {
-                  context.showSnackbar("설정");
+                  // context.showSnackbar("설정");
+                  Nav.push(const SettingScreen());
                 },
                 imagePath: '$basePath/icon/stock_settings.png',
               ),

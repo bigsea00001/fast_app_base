@@ -35,7 +35,7 @@ void main() {
   //       "${entry.key}:${entry.value.accountTypeName ?? entry.value.bank.name}");
   // }
 
-  print(bankSet.contains(bankAccountShinhan1));
+  // print(bankSet.contains(bankAccountShinhan1));
 }
 
 //List
