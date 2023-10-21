@@ -50,7 +50,7 @@ abstract class AbstractThemeColors {
 
   Color get buttonBackgound => const Color.fromARGB(255, 48, 48, 48);
 
-  Color get roundedLayoutBackgound => const Color.fromARGB(255, 24, 24, 24);
+  Color get roundedLayoutBackgound => const Color.fromARGB(180, 24, 24, 24);
 
   Color get unreadColor => const Color.fromARGB(255, 48, 48, 48);
 
