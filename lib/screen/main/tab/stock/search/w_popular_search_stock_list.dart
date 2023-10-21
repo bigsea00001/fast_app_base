@@ -12,27 +12,29 @@ class PopularSearchStockList extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height,
       color: context.appColors.appBarbackground,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              '인기 검색'.text.bold.color(context.appColors.inputText).make(),
-              emptyExpanded,
-              '오늘 ${DateTime.now().formattedTime} 기준'
-                  .text
-                  .size(12)
-                  .color(context.appColors.commonText)
-                  .make(),
-            ],
-          ),
-          height20,
-          ...popularStockList
-              .mapIndexed((element, index) =>
-                  PopularStockItem(stock: element, number: index + 1))
-              .toList(),
-        ],
-      ).pSymmetric(h: 0),
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                '인기 검색'.text.bold.color(context.appColors.inputText).make(),
+                emptyExpanded,
+                '오늘 ${DateTime.now().formattedTime} 기준'
+                    .text
+                    .size(12)
+                    .color(context.appColors.commonText)
+                    .make(),
+              ],
+            ).pSymmetric(h: 20, v: 15),
+            height20,
+            ...popularStockList
+                .mapIndexed((element, index) =>
+                    PopularStockItem(stock: element, number: index + 1))
+                .toList(),
+          ],
+        ).pSymmetric(h: 20, v: 20),
+      ),
     );
   }
 }
